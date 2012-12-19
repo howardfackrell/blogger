@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
     # article = Article.new(params[:article])
     # article.save
 
-    article = Article.create(params[:article].permit(:title,:body))  
+    article = Article.create(article_params)  
     redirect_to article_path(article)
     # debugger
     # ""
@@ -45,11 +45,15 @@ class ArticlesController < ApplicationController
   def update
 
     @article = Article.find(params[:id])
-    @article.update_attributes params[:article].permit(:title, :body)
+    @article.update_attributes article_params
     @article.save
 
     flash[:notice] = "Successfully UPDATED article"
     redirect_to article_path(@article)
+  end
+
+  def article_params
+    params[:article].permit(:title, :body)
   end
 
 
