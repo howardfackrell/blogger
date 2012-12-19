@@ -3,6 +3,7 @@
   </head>
   <body>
     <h1>Best News Site Ever</h1>
+    <%= flash[:warning] %>
     <ol>
       <% @articles.each do |article| %>
         <li>

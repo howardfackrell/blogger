@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   
   def index
+    # raise flash.inspect
     @articles = Article.all
   end
 
@@ -33,6 +34,7 @@ class ArticlesController < ApplicationController
   def destroy
     id = params[:id]
     Article.delete(id)
+    flash[:warning] = "Successfully DELETED article!"
     redirect_to articles_path()
   end
 
