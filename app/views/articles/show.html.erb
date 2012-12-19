@@ -1,25 +1,15 @@
-<html>
-  <body>
-    <h1> <%= @article.title %> </h1>
-    <div>
-      <%= @article.body %>
-    </div>
-    <h3>Comments</h3>
-    <% @article.comments.each do |comment| %>
-      <div class="comment">
-        
-        <h4>
-          <%=comment.author%>
-        </h4>
-        <%=comment.body%>
-        
-      </div>
-    <% end %>
-  </body>
+<h1> <%= @article.title %> </h1>
+<div>
+  <%= @article.body %>
+</div>
 
-  <%= link_to "Edit", edit_article_path(@article) %>  |
-  <%= link_to "Delete", article_path(@article), method: :delete, confirm: "Are you sure you want to delete it?" %> |
-  <%= link_to "Index", articles_path(@article) %>
+<h3>Comments</h3>
+<%= render partial: 'comment', collection: @article.comments %>
 
+
+<%= link_to "Edit", edit_article_path(@article) %>  
+|
+<%= link_to "Delete", article_path(@article), method: :delete, confirm: "Are you sure you want to delete it?" %> |
+<%= link_to "Index", articles_path(@article) %>
 
 </html>
