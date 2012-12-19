@@ -1,0 +1,19 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Best News Site Ever</h1>
+    <ol>
+      <% @articles.each do |article| %>
+        <li>
+<!--           # <%= link_to article.title, "/articles/#{article.id}" %>
+          # <%= link_to article.title, article_path(article) %> -->
+          <%= link_to article.title, article %>
+        </li>
+      <% end %>
+    </ol>
+    <%= link_to "Create an Article", new_article_path, class: "new_article" %>
+  </body>
+</html>
+
+<!-- stuff -->
