@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
   def destroy
     id = params[:id]
     Article.delete(id)
-    flash[:warning] = "Successfully DELETED article!"
+    flash[:notice] = "Successfully DELETED article!"
     redirect_to articles_path()
   end
 
@@ -43,10 +43,12 @@ class ArticlesController < ApplicationController
   end
 
   def update
+
     @article = Article.find(params[:id])
     @article.update_attributes params[:article]
     @article.save
 
+    flash[:notice] = "Successfully UPDATED article"
     redirect_to article_path(@article)
   end
 
