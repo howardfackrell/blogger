@@ -9,11 +9,9 @@
 <!--           # <%= link_to article.title, "/articles/#{article.id}" %>
           # <%= link_to article.title, article_path(article) %> -->
           <%= link_to article.title, article %>
+          <%= link_to "Delete", article_path(article), method: :delete, confirm: "Are you sure you want to delete '#{article.title}'?" %>
         </li>
       <% end %>
     </ol>
     <%= link_to "Create an Article", new_article_path, class: "new_article" %>
   </body>
-</html>
-
-<!-- stuff -->
