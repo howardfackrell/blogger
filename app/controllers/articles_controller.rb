@@ -45,7 +45,7 @@ class ArticlesController < ApplicationController
   def update
 
     @article = Article.find(params[:id])
-    @article.update_attributes params[:article]
+    @article.update_attributes params[:article].permit(:title, :body)
     @article.save
 
     flash[:notice] = "Successfully UPDATED article"
