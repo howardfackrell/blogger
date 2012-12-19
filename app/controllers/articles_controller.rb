@@ -25,7 +25,7 @@ class ArticlesController < ApplicationController
     # article = Article.new(params[:article])
     # article.save
 
-    article = Article.create(params[:article])  
+    article = Article.create(params[:article].permit(:title,:body))  
     redirect_to article_path(article)
     # debugger
     # ""
