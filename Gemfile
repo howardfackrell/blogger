@@ -38,3 +38,4 @@ gem 'jquery-rails'
 # To use debugger
 gem 'debugger'
 gem 'strong_parameters'
+gem 'quiet_assets'

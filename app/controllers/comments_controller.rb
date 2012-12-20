@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     comment.save
 
     flash[:notice] = "Successfully created comment for #{comment.author}"
-    redirect_to article_path(comment.article_id)
+    redirect_to article_path(comment.article)
   end
 
   def comment_params
