@@ -28,8 +28,14 @@ class ArticlesController < ApplicationController
     # article = Article.new(params[:article])
     # article.save
 
-    article = Article.create(article_params)  
-    redirect_to article_path(article)
+
+    @article = Article.new(article_params)
+    if (@article.save)
+      redirect_to article_path(@article)
+    else
+      render :new
+    end
+
     # debugger
     # ""
   end
@@ -49,10 +55,15 @@ class ArticlesController < ApplicationController
 
     @article = Article.find(params[:id])
     @article.update_attributes article_params
-    @article.save
 
-    flash[:notice] = "Successfully UPDATED article"
-    redirect_to article_path(@article)
+    if @article.save
+      flash[:notice] = "Successfully UPDATED article"
+      redirect_to article_path(@article)
+    else
+      render :new
+    end
+
+
   end
 
   def article_params
