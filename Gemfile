@@ -44,5 +44,6 @@ group :test, :development do
   gem 'debugger'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'guard-rspec'
 end
 
