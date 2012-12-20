@@ -43,5 +43,6 @@ gem 'quiet_assets'
 group :test, :development do
   gem 'debugger'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
