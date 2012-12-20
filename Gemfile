@@ -36,6 +36,12 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+
 gem 'strong_parameters'
 gem 'quiet_assets'
+
+group :test, :development do
+  gem 'debugger'
+  gem 'rspec-rails'
+end
+
