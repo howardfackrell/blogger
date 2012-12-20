@@ -9,6 +9,9 @@ class ArticlesController < ApplicationController
     # throw params
     id = params[:id]
     @article = Article.find(id)
+
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   def new
