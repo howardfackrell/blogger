@@ -7,4 +7,8 @@ class ArticleSerializer < ActiveModel::Serializer
   #def comments
   #  Array(article.comments.first)
   #end
+
+
+  #for testing
+  #expect(ArticleSerializer.new(article.first).body).to be_nil
 end
