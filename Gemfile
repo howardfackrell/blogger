@@ -28,6 +28,8 @@ gem 'jquery-rails'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
+gem "active_model_serializers" #, :git => "git://github.com/josevalim/active_model_serializers.git"
+
 
 # Use unicorn as the app server
 # gem 'unicorn'

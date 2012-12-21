@@ -12,6 +12,11 @@ class ArticlesController < ApplicationController
 
     @comment = Comment.new
     @comment.article_id = @article.id
+
+    respond_to  do |format|
+      format.html
+      format.json { render json: @article }
+    end
   end
 
   def new
